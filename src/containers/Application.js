@@ -17,12 +17,15 @@ export default class Application extends Component {
   }
   
   sumAmount (points) {
-    return <div>
-             {<PointBalance 
-               amount={points.map(this.getAmount).reduce(this.getSum)} 
-              />
-             }
-            </div>
+    return (
+      <div>
+        {
+          <PointBalance 
+            amount={points.map(this.getAmount).reduce(this.getSum)} 
+          />
+        }
+      </div>
+    )
   }
 
   render() {
