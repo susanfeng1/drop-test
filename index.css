@@ -60,6 +60,14 @@ b {
   color: #898989;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .label {
   font-size: 9px;
   text-transform: uppercase;
@@ -80,4 +88,22 @@ b {
   color: #0de47f;
   font-size: 48px;
   margin: 0;
+}
+
+.icon-row {
+  margin-top: 0px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.nav-tabs a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+.active-tab {
+  background-color: #0de47f;
+  color: #ffffff;
+  font-weight: bold;
 }

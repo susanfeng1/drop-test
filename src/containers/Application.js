@@ -5,6 +5,7 @@ import PointBalance from '../components/PointBalance'
 
 @connect(state => ({
   points: state.points,
+  activeTab: "points"
 }))
 export default class Application extends Component {
 
@@ -28,6 +29,16 @@ export default class Application extends Component {
     )
   }
 
+  setTab (event) {
+    var tabs = event.target.parentElement.children
+    
+    Array.from(tabs).forEach(function(tab) {
+      tab.className = "";
+    });
+
+    event.currentTarget.className = "active-tab";
+  }
+
   render() {
     return (
       <div>
@@ -37,14 +48,14 @@ export default class Application extends Component {
 
           {this.sumAmount(this.props.points)}
 
-          <nav>
-            <a href="#/">
+          <nav className="nav-tabs">
+            <a href="#/" onClick={event => this.setTab(event)} className="active-tab">
               Points
             </a>
-            <a href="#/offers">
+            <a href="#/offers" onClick={event => this.setTab(event)}>
               Offers
             </a>
-            <a href="#/rewards">
+            <a href="#/rewards" onClick={event => this.setTab(event)}>
               Rewards
             </a>
           </nav>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import OfferItem from '../components/OfferItem'
 
 @connect(state => ({
   offers: state.offers,
@@ -10,26 +11,13 @@ export default class Offers extends Component {
       <div className="container">
         <ul>
           {this.props.offers.map((offer, index) =>
-            <div
+            <OfferItem 
               key={`offer-${index}`}
-              className="line-item">
-
-              <p style={{ marginTop: 0 }}>
-                Offer
-              </p>
-
-              <hr style={{ marginBottom: 30 }} />
-
-              <p>
-                <b>{offer.brand}</b>
-              </p>
-
-              <hr style={{ marginTop: 30 }} />
-
-              <p style={{ marginBottom: 0 }}>
-                Drop Offer
-              </p>
-            </div>
+              amount={offer.amount}
+              brand={offer.brand}
+              date={offer.date}
+              type={offer.type}
+            />
           )}
         </ul>
       </div>

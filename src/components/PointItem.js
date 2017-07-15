@@ -19,7 +19,7 @@ const PointItem = ({ amount, brand, date }) =>
     <hr style={{ marginTop: 30 }} />
 
     <p style={{ marginBottom: 0 }}>
-      from <b>{brand}</b> on <b>{date}</b>
+      from <b>{brand}</b> on <b>{new Date(date).toDateString()}</b>
     </p>
   </div>
 
