@@ -5,10 +5,9 @@ import PointBalance from '../components/PointBalance'
 
 @connect(state => ({
   points: state.points,
-  activeTab: "points"
 }))
-export default class Application extends Component {
 
+export default class Application extends Component {
   getAmount(point){
     return point.amount;
   }
@@ -22,7 +21,7 @@ export default class Application extends Component {
       <div>
         {
           <PointBalance 
-            amount={points.map(this.getAmount).reduce(this.getSum)} 
+            amount={this.props.points.map(this.getAmount).reduce(this.getSum)} 
           />
         }
       </div>
@@ -67,3 +66,5 @@ export default class Application extends Component {
     )
   }
 }
+
+

@@ -1,8 +1,8 @@
 import React from 'react'
 import accounting from 'accounting'
 
-const RewardItem = ({ cost, brand }) =>
-  <div className="line-item">
+const RewardItem = ({ cost, brand, onClick}) =>
+  <div className="line-item" data-cost={cost} data-brand={brand} onClick={onClick}>
     <p style={{ marginTop: 0 }}>
       Reward
     </p>
