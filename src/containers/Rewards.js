@@ -47,7 +47,6 @@ export default class Rewards extends Component {
   };
 
   render() {
-    const { state, actions } = this.props;
     return (
       <div className="container modal-container">
         <ul>
