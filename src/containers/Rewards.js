@@ -29,7 +29,7 @@ export default class Rewards extends Component {
     return prev + next;
   }
 
-  redeemReward(event, actions) {
+  redeemReward(event) {
     cost = event.currentTarget.getAttribute("data-cost");
     brand = event.currentTarget.getAttribute("data-brand");
     if (cost > this.props.points.map(this.getAmount).reduce(this.getSum)) {
@@ -55,7 +55,7 @@ export default class Rewards extends Component {
               key={`reward-${index}`}
               cost={reward.cost}
               brand={reward.brand}
-              onClick={event => this.redeemReward(event, actions)}
+              onClick={event => this.redeemReward(event)}
             />
           )}
         <Modal 
