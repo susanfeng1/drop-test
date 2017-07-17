@@ -122,6 +122,16 @@ b {
   margin-right: auto;
 }
 
+.glow-up {
+    -webkit-transition: font-size 1s; /* Safari */
+    transition: font-size 1s;
+}
+
+.glow {
+  font-size: 52px;
+  cursor: pointer;
+}
+
 /* Modal styling */
 
 .modal-open {
