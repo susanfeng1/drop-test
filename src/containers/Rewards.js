@@ -15,15 +15,6 @@ const mapStateToProps = state => ({
     pointbalance: state.pointbalance
 })
 
-let balanceHandler = function(dispatch) {
-  let setBalance = function(balance) {
-    dispatch(redeem.setBalance(balance))
-  }
-  return {
-    setBalance,
-  };
-}
-
 let redeemHandler = function(dispatch) {
   let redeemReward = function(cost) {
     dispatch(redeem.redeem(cost))
@@ -36,11 +27,8 @@ let redeemHandler = function(dispatch) {
 class Rewards extends Component {
   constructor(props) {
     super(props);
-    this.balanceHandler = balanceHandler(this.props.dispatch);
     this.redeemHandler = redeemHandler(this.props.dispatch);
-
-    this.balanceHandler.setBalance(this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum));
-  }
+ }
 
   state = {
     open: false,

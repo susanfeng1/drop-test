@@ -3,13 +3,28 @@ import { connect } from 'react-redux'
 import logo from '../images/logo-green.png'
 import PointBalance from '../components/PointBalance'
 import SumArrayHelper from '../utils/SumArrayHelper'
+import * as redeem from '../actions'
 
-@connect(state => ({
+const mapStateToProps = state => ({
   points: state.points,
   pointbalance: state.pointbalance
-}))
+})
 
-export default class Application extends Component {  
+let balanceHandler = function(dispatch) {
+  let setBalance = function(balance) {
+    dispatch(redeem.setBalance(balance))
+  }
+  return {
+    setBalance,
+  };
+}
+
+class Application extends Component { 
+  constructor(props) {
+    super(props);
+    this.balanceHandler = balanceHandler(this.props.dispatch);
+    this.balanceHandler.setBalance(this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum));
+  }
   
   /* Previous version of sumAmount, which calculated the sum from the points reducer
      Depricated as a reducer and actions were implemented (Bonus #1) to keep track of of a balance of points
@@ -78,4 +93,8 @@ export default class Application extends Component {
     )
   }
 }
+
+export default connect(
+  mapStateToProps
+)(Application)
 
