@@ -32,6 +32,7 @@ export default class Rewards extends Component {
   redeemReward(event) {
     cost = event.currentTarget.getAttribute("data-cost");
     brand = event.currentTarget.getAttribute("data-brand");
+    
     if (cost > this.props.points.map(this.getAmount).reduce(this.getSum)) {
       this.setState({modalMessage: this.state.insufficientMessage.replace("{0}", brand),
                         modalIcon: warningIcon});
@@ -39,6 +40,7 @@ export default class Rewards extends Component {
       this.setState({modalMessage: this.state.redeemMessage.replace("{0}", brand),
                         modalIcon: checkmarkIcon});
     }
+    
     this.setState({open: true, modalCost: cost});
   };
 
@@ -60,19 +62,26 @@ export default class Rewards extends Component {
               onClick={event => this.redeemReward(event)}
             />
           )}
+        
         <Modal 
           show={this.state.open} 
           bsSize="sm" 
           container={this}
           onHide={() => this.closeDialog()}>
+
           <Modal.Body> 
-            <span className="right closeModal" onClick={event => this.closeDialog()}>X</span>
+            <span className="right close-modal" onClick={event => this.closeDialog()}>X</span>
+
             <hr style={{ marginTop: 30 }} />
-            <img className="left modalIcon" height={20} src={this.state.modalIcon} />
-            <p className="right modalMessage">{this.state.modalMessage}</p>
+            
+            <img className="left modal-icon" height={20} src={this.state.modalIcon} />
+            <p className="right modal-message">{this.state.modalMessage}</p>
+            
             <hr style={{ marginTop: 20, marginBottom: 30 }} />
+            
             <span className="right" style={{ marginTop: -15 }}>Cost: {this.state.modalCost} pts</span>
           </Modal.Body>
+        
         </Modal>
         </ul>
       </div>

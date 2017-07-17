@@ -16,10 +16,10 @@ const RewardItem = ({ cost, brand, amount, type, onClick}) =>
     <span><b>{brand}</b></span>
 
     <p style={{ height: 40 }}>
-      <img className={type == 'Coffee' ? 'show rewardIcon' : 'hide'} height={40} src={coffeeIcon} />
-      <img className={type == 'Dining' ? 'show rewardIcon' : 'hide'} height={40} src={diningIcon} />
-      <img className={type == 'Travel' ? 'show rewardIcon' : 'hide'} height={40} src={travelIcon} />
-      <img className={type == 'Misc' ? 'show rewardIcon' : 'hide'} height={40} src={clothingIcon} />
+      <img className={type == 'Coffee' ? 'show reward-icon' : 'hide'} height={40} src={coffeeIcon} />
+      <img className={type == 'Dining' ? 'show reward-icon' : 'hide'} height={40} src={diningIcon} />
+      <img className={type == 'Travel' ? 'show reward-icon' : 'hide'} height={40} src={travelIcon} />
+      <img className={type == 'Misc' ? 'show reward-icon' : 'hide'} height={40} src={clothingIcon} />
     </p>
 
     <p><b>${amount}</b> gift card</p>

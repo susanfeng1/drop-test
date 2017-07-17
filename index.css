@@ -117,19 +117,24 @@ b {
   display: none;
 }
 
-.rewardIcon {
+.reward-icon {
   margin-left: auto;
   margin-right: auto;
 }
 
 .glow-up {
-    -webkit-transition: font-size 1s; /* Safari */
-    transition: font-size 1s;
+  -webkit-transition: font-size 1s, text-shadow 1s; /* Safari */
+  transition: font-size 1s, text-shadow 1s;
+}
+
+.glow-up:hover {
+  cursor: pointer;
 }
 
 .glow {
   font-size: 52px;
   cursor: pointer;
+  text-shadow: 2px 2px 8px #c4c8ce
 }
 
 /* Modal styling */
@@ -256,14 +261,14 @@ b {
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
 }
-.closeModal:hover {
+.close-modal:hover {
   cursor: pointer;
 }
-.modalIcon {
+.modal-icon {
   margin-top: 20px;
   margin-left: 10px;
 }
-.modalMessage {
+.modal-message {
   width: 220px;
   padding-left: 10px;
   padding-right: 10px;
