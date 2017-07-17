@@ -2,26 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '../images/logo-green.png'
 import PointBalance from '../components/PointBalance'
+import SumArrayHelper from '../utils/SumArrayHelper'
 
 @connect(state => ({
   points: state.points,
 }))
 
-export default class Application extends Component {
-  getAmount(point){
-    return point.amount;
-  }
-
-  getSum(prev, next){
-    return prev + next;
-  }
-  
+export default class Application extends Component {  
   sumAmount (points) {
     return (
       <div>
         {
           <PointBalance 
-            amount={this.props.points.map(this.getAmount).reduce(this.getSum)} 
+            amount={this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum)} 
           />
         }
       </div>

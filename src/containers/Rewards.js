@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/lib/Modal'
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger'
 import checkmarkIcon from '../images/checkmark-icon.png'
 import warningIcon from '../images/warning-icon.png'
+import SumArrayHelper from '../utils/SumArrayHelper'
 
 @connect(state => ({
   points: state.points,
@@ -21,20 +22,12 @@ export default class Rewards extends Component {
     modalCost: 0,
     modalIcon: warningIcon
   };
-  
-  getAmount(point){
-    return point.amount;
-  }
-
-  getSum(prev, next){
-    return prev + next;
-  }
 
   redeemReward(event) {
     cost = event.currentTarget.getAttribute("data-cost");
     brand = event.currentTarget.getAttribute("data-brand");
     
-    if (cost > this.props.points.map(this.getAmount).reduce(this.getSum)) {
+    if (cost > this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum)) {
       this.setState({modalMessage: this.state.insufficientMessage.replace("{0}", brand),
                         modalIcon: warningIcon});
     } else {
