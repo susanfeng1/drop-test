@@ -150,6 +150,11 @@ b {
   cursor: pointer;
 }
 
+.auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Modal styling */
 
 .modal-open {

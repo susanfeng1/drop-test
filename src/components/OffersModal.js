@@ -10,11 +10,11 @@ const OffersModal = ({ amount, brand, date, type, onClick}) =>
         <p style={{ textAlign: "center", marginTop: 30 }}>{amount} pts from <b>{brand}</b></p>
         
         <p style={{ height: 28, textAlign: "center", marginBottom: 30 }}>
-            <button className={type == 'One-time' ? 'show green-button' : 'hide'} 
-            style={{marginLeft: "auto", marginRight: "auto"}} onClick={onClick}>Activate Offer</button>
+            <button className={type == 'One-time' ? 'show auto-margin green-button' : 'hide'} onClick={onClick}>
+                Activate Offer
+            </button>
         
-            <img className={type == 'Ongoing' ? 'show' : 'hide'} 
-            style={{marginLeft: "auto", marginRight: "auto", marginBottom: 5 }} height={20} src={checkmarkIcon} />
+            <img className={type == 'Ongoing' ? 'show auto-margin' : 'hide'} style={{ marginBottom: 5 }} height={20} src={checkmarkIcon} />
         
             <span className={type == 'Ongoing' ? 'show label' : 'hide'} >Offer Active</span>
         </p>
