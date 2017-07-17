@@ -1,9 +1,5 @@
 import React from 'react'
 import accounting from 'accounting'
-import coffeeIcon from '../images/coffee-icon.png'
-import diningIcon from '../images/food-icon.png'
-import travelIcon from '../images/plane-icon.png'
-import clothingIcon from '../images/shirt-icon.png'
 import offerIcon from '../images/offer-icon.png'
 
 const OfferItem = ({ amount, brand, date, type }) =>

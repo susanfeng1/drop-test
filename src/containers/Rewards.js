@@ -55,6 +55,8 @@ export default class Rewards extends Component {
               key={`reward-${index}`}
               cost={reward.cost}
               brand={reward.brand}
+              amount={reward.amount}
+              type={reward.type}
               onClick={event => this.redeemReward(event)}
             />
           )}

@@ -109,6 +109,19 @@ b {
   font-weight: bold;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.rewardIcon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Modal styling */
 
 .modal-open {
@@ -147,9 +160,11 @@ b {
   overflow-y: auto;
 }
 .modal-dialog {
-  position: relative;
   width: auto;
-  margin: 10px;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
 }
 .modal-content {
   position: relative;
@@ -160,6 +175,12 @@ b {
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
           box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+
+  min-height: 100px;
+  color: #a3a3a3;
+  font-size: 10pt;
+  font-weight: 300;
+  font-family: sans-serif;          
 }
 .modal-backdrop {
   position: fixed;
@@ -215,24 +236,9 @@ b {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 768px) {
-  .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
-  }
-  .modal-content {
-    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-height: 100px;
-    color: #a3a3a3;
-    font-size: 10pt;
-    font-weight: 300;
-    font-family: sans-serif;
-  }
-  .modal-sm {
-    width: 300px;
-    margin-top: 100px;
-  }
+.modal-sm {
+  width: 300px;
+  margin-top: 100px;
 }
 .modal-container {
   position: relative;
