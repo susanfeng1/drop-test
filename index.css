@@ -137,6 +137,19 @@ b {
   text-shadow: 2px 2px 8px #c4c8ce
 }
 
+.green-button {
+  background-color: #0de47f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+}
+
+.green-button:hover {
+  cursor: pointer;
+}
+
 /* Modal styling */
 
 .modal-open {
@@ -177,7 +190,7 @@ b {
 .modal-dialog {
   width: auto;
   position: fixed;
-  top: 20%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%) !important;
 }

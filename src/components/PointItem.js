@@ -1,8 +1,8 @@
 import React from 'react'
 import accounting from 'accounting'
 
-const PointItem = ({ amount, brand, date }) =>
-  <div className="line-item">
+const PointItem = ({ amount, brand, date, type, onClick }) =>
+  <div className="line-item" data-brand={brand} data-type={type} data-amount={amount} data-date={date} onClick={onClick}>
     <p style={{ marginTop: 0 }}>
       You earned points
     </p>

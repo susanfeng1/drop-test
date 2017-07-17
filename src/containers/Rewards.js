@@ -79,7 +79,7 @@ export default class Rewards extends Component {
             
             <hr style={{ marginTop: 20, marginBottom: 30 }} />
             
-            <span className="right" style={{ marginTop: -15 }}>Cost: {this.state.modalCost} pts</span>
+            <span className="right label" style={{ marginTop: -15 }}>Cost: {this.state.modalCost} pts</span>
           </Modal.Body>
         
         </Modal>

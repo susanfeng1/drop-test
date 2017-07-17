@@ -2,8 +2,8 @@ import React from 'react'
 import accounting from 'accounting'
 import offerIcon from '../images/offer-icon.png'
 
-const OfferItem = ({ amount, brand, date, type }) =>
-  <div className="line-item">
+const OfferItem = ({ amount, brand, date, type, onClick }) =>
+  <div className="line-item" data-brand={brand} data-amount={amount} data-type={type} onClick={onClick}>
     <p className="icon-row">
       <img className="left" height={20} src={offerIcon} />          
       <span className="left" style={{ marginLeft: 5 }}>{brand}</span>    

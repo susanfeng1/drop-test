@@ -11,14 +11,14 @@ const initialState = [
     amount: 5,
     date: '2017-06-02',
     id: 1,
-    type: 'Multi-use'
+    type: 'Ongoing'
   },
   {
     brand: 'Starbucks',
     amount: 8,
     date: '2017-06-01',
     id: 2,
-    type: 'Multi-use'
+    type: 'Ongoing'
   },
   {
     brand: 'Metro',
