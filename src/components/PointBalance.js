@@ -9,10 +9,6 @@ function glowText(event) {
   }.bind(element), 1000);
 }
 
-function removeGlow(event) {
-  event.currentTarget.className = "point-text glow-up";
-}
-
 const PointBalance = ({ amount }) => (
 
   <div style={{ marginTop: 30, marginBottom: 45 }}>
