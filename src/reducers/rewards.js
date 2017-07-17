@@ -15,9 +15,9 @@ const initialState = [
   },
   {
     brand: 'Starbucks',
-    cost: 10000,
+    cost: 100,
     type: 'Coffee',
-    amount: 20,
+    amount: 1,
     id: 2,
   },
     {

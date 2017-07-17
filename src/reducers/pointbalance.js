@@ -1,14 +1,9 @@
-const initialState = 
-  {
-    balance: 2999,
-  }
-
-export default function rewards (state = initialState, action) {
+export default function rewards (state = 0, action) {
   switch (action.type) {
     case 'REDEEM':
-      return  {
-      ...state,
-      balance: balance - action.value }
+      return state - action.cost
+    case 'SETBALANCE':
+      return action.balance
     default:
       return state
   }

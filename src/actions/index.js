@@ -1,6 +1,13 @@
-export function redeem(cost) {
+export const redeem = cost => {
   return {
     type: 'REDEEM',
-    value: cost
+    cost
+  };
+}
+
+export const setBalance = balance => {
+  return {
+    type: 'SETBALANCE',
+    balance
   };
 }

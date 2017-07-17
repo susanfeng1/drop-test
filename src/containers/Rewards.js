@@ -7,13 +7,41 @@ import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger'
 import checkmarkIcon from '../images/checkmark-icon.png'
 import warningIcon from '../images/warning-icon.png'
 import SumArrayHelper from '../utils/SumArrayHelper'
+import * as redeem from '../actions'
 
-@connect(state => ({
-  points: state.points,
-  rewards: state.rewards
-}))
+const mapStateToProps = state => ({
+    points: state.points,
+    rewards: state.rewards,
+    pointbalance: state.pointbalance
+})
 
-export default class Rewards extends Component {
+let balanceHandler = function(dispatch) {
+  let setBalance = function(balance) {
+    dispatch(redeem.setBalance(balance))
+  }
+  return {
+    setBalance,
+  };
+}
+
+let redeemHandler = function(dispatch) {
+  let redeemReward = function(cost) {
+    dispatch(redeem.redeem(cost))
+  }
+  return {
+    redeemReward,
+  };
+}
+
+class Rewards extends Component {
+  constructor(props) {
+    super(props);
+    this.balanceHandler = balanceHandler(this.props.dispatch);
+    this.redeemHandler = redeemHandler(this.props.dispatch);
+
+    this.balanceHandler.setBalance(this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum));
+  }
+
   state = {
     open: false,
     redeemMessage: "Your {0} reward has been redeemed. Enjoy!",
@@ -33,6 +61,7 @@ export default class Rewards extends Component {
     } else {
       this.setState({modalMessage: this.state.redeemMessage.replace("{0}", brand),
                         modalIcon: checkmarkIcon});
+      this.redeemHandler.redeemReward(cost);
     }
     
     this.setState({open: true, modalCost: cost});
@@ -76,3 +105,7 @@ export default class Rewards extends Component {
     )
   }
 }
+
+export default connect(
+  mapStateToProps
+)(Rewards)

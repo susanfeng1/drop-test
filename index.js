@@ -15,10 +15,11 @@ import Rewards from './src/containers/Rewards'
 import points from './src/reducers/points'
 import offers from './src/reducers/offers'
 import rewards from './src/reducers/rewards'
+import pointbalance from './src/reducers/pointbalance'
 
 import './index.css'
 
-const store = createStore(combineReducers({ points, offers, rewards }))
+const store = createStore(combineReducers({ points, offers, rewards, pointbalance}))
 
 render(
   <Provider store={store}>

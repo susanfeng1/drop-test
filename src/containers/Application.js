@@ -6,15 +6,34 @@ import SumArrayHelper from '../utils/SumArrayHelper'
 
 @connect(state => ({
   points: state.points,
+  pointbalance: state.pointbalance
 }))
 
 export default class Application extends Component {  
-  sumAmount (points) {
+  
+  /* Previous version of sumAmount, which calculated the sum from the points reducer
+     Depricated as a reducer and actions were implemented (Bonus #1) to keep track of of a balance of points
+     as the user redeems rewards.
+  
+  sumAmount () {
     return (
       <div>
         {
           <PointBalance 
             amount={this.props.points.map(SumArrayHelper.getAmount).reduce(SumArrayHelper.getSum)} 
+          />
+        }
+      </div>
+    )
+  }
+  */
+
+  sumAmount () {
+    return (
+      <div>
+        {
+          <PointBalance 
+            amount={this.props.pointbalance} 
           />
         }
       </div>
@@ -38,7 +57,7 @@ export default class Application extends Component {
 
           <img height={40} src={logo} />
 
-          {this.sumAmount(this.props.points)}
+          {this.sumAmount()}
 
           <nav className="nav-tabs">
             <a href="#/" onClick={event => this.setTab(event)} className="active-tab">
@@ -59,5 +78,4 @@ export default class Application extends Component {
     )
   }
 }
-
 
