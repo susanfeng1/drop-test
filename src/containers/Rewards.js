@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RewardItem from '../components/RewardItem'
+import RewardsModal from '../components/RewardsModal'
 import Modal from 'react-bootstrap/lib/Modal'
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger'
 import checkmarkIcon from '../images/checkmark-icon.png'
@@ -69,18 +70,12 @@ export default class Rewards extends Component {
           container={this}
           onHide={() => this.closeDialog()}>
 
-          <Modal.Body> 
-            <span className="right close-modal" onClick={event => this.closeDialog()}>X</span>
-
-            <hr style={{ marginTop: 30 }} />
-            
-            <img className="left modal-icon" height={20} src={this.state.modalIcon} />
-            <p className="right modal-message">{this.state.modalMessage}</p>
-            
-            <hr style={{ marginTop: 20, marginBottom: 30 }} />
-            
-            <span className="right label" style={{ marginTop: -15 }}>Cost: {this.state.modalCost} pts</span>
-          </Modal.Body>
+          <RewardsModal 
+            message={this.state.modalMessage}
+            cost={this.state.modalCost}
+            icon={this.state.modalIcon}
+            onClick={() => this.closeDialog()}
+          />
         
         </Modal>
         </ul>
